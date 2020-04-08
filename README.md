@@ -7,7 +7,7 @@
 To install these dotfiles from PowerShell without Git:
 
 ```bash
-iex ((new-object net.webclient).DownloadString('https://raw.github.com/jayharris/dotfiles-windows/master/setup/install.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentroques/dotfiles-windows/master/setup/install.ps1'))
 ```
 
 To update later on, just run that command again.
