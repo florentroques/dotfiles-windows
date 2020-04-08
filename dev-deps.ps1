@@ -33,3 +33,10 @@ choco install GoogleChrome        --limit-output; <# pin; evergreen #> choco pin
 choco install GoogleChrome.Canary --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome.Canary --limit-output
 choco install Firefox             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
 choco install Opera               --limit-output; <# pin; evergreen #> choco pin add --name Opera               --limit-output
+
+choco install filezilla
+choco install github-desktop
+choco install docker-desktop
+choco install vscode
+choco install postman
+choco install chocolateygui
