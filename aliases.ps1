@@ -21,5 +21,4 @@ Set-Alias -Name c -Value code
 function Get-PowershellVersion {
  Get-Host | Select-Object Version
 }
-Set-Alias poshversion Get-PowershellVersion
-Set-Alias poshv Get-PowershellVersion
+Set-Alias psversion Get-PowershellVersion
