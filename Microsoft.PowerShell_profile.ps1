@@ -26,12 +26,25 @@ function get-process-for-port($port) {
 	Get-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess
 }
 
-
-
-foreach ( $includeFile in ("aws", "defaults", "openssl", "aws", "unix", "development", "node") ) {
-	Unblock-File $profileDir\$includeFile.ps1
-. "$profileDir\$includeFile.ps1"
+function Verify-Elevated {
+    # Get the ID and security principal of the current user account
+    $myIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent()
+    $myPrincipal=new-object System.Security.Principal.WindowsPrincipal($myIdentity)
+    # Check to see if we are currently running "as Administrator"
+    return $myPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
+
+#Import all subscripts in Powershell profile
+Push-Location (Split-Path -parent $profile)
+$subscripts = @(
+ "aliases",
+ "docker",
+ "defaults",
+ "unix",
+)
+$subscripts | Where-Object {Test-Path "$_.ps1"} | ForEach-Object -process {Invoke-Expression ". .\$_.ps1"}
+Pop-Location
+
 
 #start Powershell directly in $defaultSessionPath folder
 Set-Location $defaultSessionPath
