@@ -15,3 +15,15 @@ or
 clist -l
 ```
 
+To customize Powershell, see:  
+https://github.com/pecigonzalo/Oh-My-Posh  
+https://github.com/JanDeDobbeleer/oh-my-posh  
+Note: had better chance trying https://github.com/pecigonzalo/Oh-My-Posh (to try again)
+
+
+Carbon, Powerful Powershell module:
+http://get-carbon.org/  
+https://github.com/webmd-health-services/Carbon/
+
+
+
