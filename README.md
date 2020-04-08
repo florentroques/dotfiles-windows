@@ -1,6 +1,18 @@
 # dotfiles-windows
 
-Inspired from:    
+### How to install
+
+> **Note:** You must have your execution policy set to unrestricted (or at least in bypass) for this to work. To set this, run `Set-ExecutionPolicy Unrestricted` from a PowerShell running as Administrator.
+
+To install these dotfiles from PowerShell without Git:
+
+```bash
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/jayharris/dotfiles-windows/master/setup/install.ps1'))
+```
+
+To update later on, just run that command again.
+
+### Inspired from:    
 https://github.com/jayharris/dotfiles-windows  
 https://github.com/mikemaccana/powershell-profile
 
@@ -23,13 +35,13 @@ or
 clist -l
 ```
 
-To customize Powershell, see:  
+### See also
+- To customize Powershell  
 https://github.com/pecigonzalo/Oh-My-Posh  
 https://github.com/JanDeDobbeleer/oh-my-posh  
-Note: had better chance trying https://github.com/pecigonzalo/Oh-My-Posh (to try again)
+Note: had tried https://github.com/pecigonzalo/Oh-My-Posh which seemed to run better
 
-
-Carbon, Powerful Powershell module:
+- Carbon, Powerful Powershell module:  
 http://get-carbon.org/  
 https://github.com/webmd-health-services/Carbon/
 
