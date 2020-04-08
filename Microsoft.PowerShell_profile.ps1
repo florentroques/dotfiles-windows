@@ -1,3 +1,6 @@
+#https://github.com/pecigonzalo/Oh-My-Posh
+# Import-Module "Oh-My-Posh" -DisableNameChecking -NoClobber
+
 $profileDir = $PSScriptRoot;
 $defaultSessionPath = "$HOME/Documents/Github"
 
