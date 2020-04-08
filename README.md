@@ -1,4 +1,5 @@
 # dotfiles-windows
+A collection of PowerShell files for Windows, including common application installation through Chocolatey
 
 ### How to install
 
