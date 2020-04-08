@@ -17,3 +17,9 @@ ${function:dl} = { Set-Location ~\Downloads }
 
 #start vscode typing c
 Set-Alias -Name c -Value code
+
+function Get-PowershellVersion {
+ Get-Host | Select-Object Version
+}
+Set-Alias poshversion Get-PowershellVersion
+Set-Alias poshv Get-PowershellVersion
