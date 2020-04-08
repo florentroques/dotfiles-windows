@@ -34,6 +34,41 @@ function Verify-Elevated {
     return $myPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
+#show commands history
+function hist {
+    $find = $args;
+    Write-Host "Finding in full history using {`$_ -like `"*$find*`"}";
+    Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Get-Unique | more
+}
+
+#Reload Powershell profiles
+function Invoke-PowershellProfiles {
+    @(
+        $Profile.AllUsersAllHosts,
+        $Profile.AllUsersCurrentHost,
+        $Profile.CurrentUserAllHosts,
+        $Profile.CurrentUserCurrentHost,
+        $Profile
+    ) | % {
+        if(Test-Path $_){
+            Write-Verbose "Running $_"
+            . $_
+        }
+    }
+}
+
+#pr = powershell reload
+Set-Alias pr Invoke-PowershellProfiles #Run as . pr otherwise doesn't reload profile(s)
+
+
+function Edit-Profile {
+    #launch current user powershell profile file in vscode for editing 
+    code $PROFILE
+}
+#aliases
+#pe = powershell edit
+Set-Alias pe Edit-profile
+
 #Import all subscripts in Powershell profile
 Push-Location (Split-Path -parent $profile)
 $subscripts = @(
