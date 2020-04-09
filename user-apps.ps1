@@ -17,25 +17,25 @@ if ((which cinst) -eq $null) {
 }
 
 # browsers
-choco install GoogleChrome        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
-choco install Firefox             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
+choco upgrade GoogleChrome -y        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
+choco upgrade Firefox -y             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
 
 #utilities
-choco install adobereader
-choco install vlc
-choco install 7zip.install
-choco install jre8
-choco install ccleaner
-choco install avastfreeantivirus
-choco install malwarebytes
-choco install teamviewer
-choco install zoom-client
-choco install notepadplusplus.install
-choco install libreoffice-fresh
-choco install lastpass
-choco install lastpass-chrome
-choco install skype
-choco install paint.net
-choco install spotify
-choco install gimp
-choco install whatsapp
+choco upgrade adobereader -y
+choco upgrade vlc -y
+choco upgrade 7zip.install -y
+choco upgrade jre8 -y
+choco upgrade ccleaner -y
+choco upgrade avastfreeantivirus -y
+choco upgrade malwarebytes -y
+choco upgrade teamviewer -y
+choco upgrade zoom-client -y
+choco upgrade notepadplusplus.install -y
+choco upgrade libreoffice-fresh -y
+choco upgrade lastpass -y
+choco upgrade lastpass-chrome -y
+choco upgrade skype -y
+choco upgrade paint.net -y
+choco upgrade spotify -y
+choco upgrade gimp -y
+choco upgrade whatsapp -y
