@@ -43,6 +43,7 @@ choco upgrade docker-desktop -y
 choco upgrade vscode -y
 choco upgrade postman -y
 choco upgrade chocolateygui -y
+choco upgrade mkcert -y #easy way to create valid https certificates for localhost
 
 #install vscode extensions, her emainly for php
 code --install-extension be5invis.toml
