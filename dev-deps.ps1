@@ -43,3 +43,32 @@ choco upgrade docker-desktop -y
 choco upgrade vscode -y
 choco upgrade postman -y
 choco upgrade chocolateygui -y
+
+#install vscode extensions, her emainly for php
+code --install-extension be5invis.toml
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension csicar.key-proof-language
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension donjayamanne.githistory
+code --install-extension eamodio.gitlens
+code --install-extension EditorConfig.EditorConfig
+code --install-extension fabiospampinato.vscode-install-vsix
+code --install-extension felixfbecker.php-debug
+code --install-extension felixfbecker.php-intellisense
+code --install-extension felixfbecker.php-pack
+code --install-extension geeksharp.openssl-configuration-file
+code --install-extension junstyle.php-cs-fixer
+code --install-extension kokororin.vscode-phpfmt
+code --install-extension MehediDracula.php-namespace-resolver
+code --install-extension mgmcdermott.vscode-language-babel
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode.powershell
+code --install-extension neilbrayfield.php-docblocker
+code --install-extension Nixon.env-cmd-file-syntax
+code --install-extension OfHumanBondage.react-proptypes-intellisense
+code --install-extension pflannery.vscode-versionlens
+code --install-extension Prisma.prisma
+code --install-extension walkme.PHP-extension-pack
+code --install-extension whatwedo.twig
+code --install-extension wix.vscode-import-cost
