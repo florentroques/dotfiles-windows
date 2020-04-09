@@ -7,11 +7,28 @@ A collection of PowerShell files for Windows, including common application insta
 
 To install these dotfiles from PowerShell without Git:
 
-```bash
+```powershell
 iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentroques/dotfiles-windows/master/setup/install.ps1'))
 ```
 
 To update later on, just run that command again.
+
+
+### Install dev dependencies and packages
+
+```posh
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentroques/dotfiles-windows/master/dev-deps.ps1'))
+```
+
+> The scripts will install Chocolatey, node.js, and WebPI if necessary.
+
+### Install user apps
+
+```posh
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentroques/dotfiles-windows/master/user-apps.ps1'))
+```
+
+
 
 ### Inspired from:    
 https://github.com/jayharris/dotfiles-windows  
