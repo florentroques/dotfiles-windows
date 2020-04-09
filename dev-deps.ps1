@@ -30,6 +30,9 @@ choco sync
 #using choco upgrade on evergreen apps like chrome is redundant
 #pinning choco packages ignores them in choco upgrade
 
+#choco upgrade achieves install if the package is not installed and upgraded if there is a newer version in your sources
+#https://stackoverflow.com/a/47543832/1152843
+
 # browsers
 choco upgrade GoogleChrome -y        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
 choco upgrade GoogleChrome.Canary -y --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome.Canary --limit-output
@@ -41,4 +44,4 @@ choco upgrade github-desktop -y
 choco upgrade docker-desktop -y
 choco upgrade vscode -y
 choco upgrade postman -y
-choco install chocolateygui
+choco upgrade chocolateygui -y
