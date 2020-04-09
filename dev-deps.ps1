@@ -25,18 +25,20 @@ if ((which cinst) -eq $null) {
     choco feature enable -n=allowGlobalConfirmation
 }
 
+choco sync
+
 #using choco upgrade on evergreen apps like chrome is redundant
 #pinning choco packages ignores them in choco upgrade
 
 # browsers
-choco install GoogleChrome        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
-choco install GoogleChrome.Canary --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome.Canary --limit-output
-choco install Firefox             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
-choco install Opera               --limit-output; <# pin; evergreen #> choco pin add --name Opera               --limit-output
+choco upgrade GoogleChrome -y        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
+choco upgrade GoogleChrome.Canary -y --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome.Canary --limit-output
+choco upgrade Firefox -y             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
+choco upgrade Opera -y               --limit-output; <# pin; evergreen #> choco pin add --name Opera               --limit-output
 
-choco install filezilla
-choco install github-desktop
-choco install docker-desktop
-choco install vscode
-choco install postman
+choco upgrade filezilla -y
+choco upgrade github-desktop -y
+choco upgrade docker-desktop -y
+choco upgrade vscode -y
+choco upgrade postman -y
 choco install chocolateygui
