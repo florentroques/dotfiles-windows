@@ -78,7 +78,7 @@ $subscripts = @(
  "aliases",
  "docker",
  "defaults",
- "unix",
+ "unix"
 )
 $subscripts | Where-Object {Test-Path "$_.ps1"} | ForEach-Object -process {Invoke-Expression ". .\$_.ps1"}
 Pop-Location
