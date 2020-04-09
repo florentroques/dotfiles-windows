@@ -1,20 +1,3 @@
-
-# Just a couple of things (sed, to interpret sed scripts) from http://unxutils.sourceforge.net/
-Add-PathVariable "${env:ProgramFiles}\UnxUtils"
-
-# Note PSReadLine uses vi keybindings by default. If you want emacs enable:
-# Set-PSReadlineOption -EditMode Emacs
-# I like vi keybindings, so I just add my favourite one from emacs
-# See https://github.com/lzybkr/PSReadLine#usage
-Set-PSReadlineKeyHandler -Key 'Escape,_' -Function YankLastArg
-
-# Change how powershell does tab completion
-# http://stackoverflow.com/questions/39221953/can-i-make-powershell-tab-complete-show-me-all-options-rather-than-picking-a-sp
-Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
-
-# For dig, host, etc.
-Add-PathVariable "${env:ProgramFiles}\ISC BIND 9\bin"
-
 # Should really be name=value like Unix version of export but not a big deal
 function export($name, $value) {
 	set-item -force -path "env:$name" -value $value;
@@ -29,8 +12,6 @@ function pgrep($name) {
 }
 
 # Like Unix touch, creates new files and updates time on old ones
-# PSCX has a touch, but it doesn't make empty files
-Remove-Alias touch
 function touch($file) {
 	if ( Test-Path $file ) {
 		Set-FileTime $file
