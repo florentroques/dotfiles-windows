@@ -9,8 +9,8 @@ if (!(Verify-Elevated)) {
 }
 
 ### Update Help for Modules
-Write-Host "Updating Help..." -ForegroundColor "Yellow"
-Update-Help -Force
+# Write-Host "Updating Help..." -ForegroundColor "Yellow"
+# Update-Help -Force
 
 ### Install PowerShell Modules
 Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
