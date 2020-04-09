@@ -25,8 +25,6 @@ if ((which cinst) -eq $null) {
     choco feature enable -n=allowGlobalConfirmation
 }
 
-choco sync
-
 #using choco upgrade on evergreen apps like chrome is redundant
 #pinning choco packages ignores them in choco upgrade
 
