@@ -46,6 +46,11 @@ choco upgrade chocolateygui -y
 choco upgrade mkcert -y #easy way to create valid https certificates for localhost
 choco upgrade picpick.portable -y #screenshot and editing tool
 
+#nodejs tools
+choco upgrade yarn -y
+choco upgrade nodejs -y
+npm install -g npx
+
 #install vscode extensions, her emainly for php
 code --install-extension be5invis.toml
 code --install-extension bmewburn.vscode-intelephense-client
