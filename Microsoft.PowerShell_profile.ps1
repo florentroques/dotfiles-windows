@@ -25,9 +25,11 @@ function get-serial-number {
   Get-CimInstance -ClassName Win32_Bios | select-object serialnumber
 }
 
-function get-process-for-port($port) {
+function Get-ProcessForPort($port) {
 	Get-Process -Id (Get-NetTCPConnection -LocalPort $port).OwningProcess
 }
+Set-Alias p4p Get-ProcessForPort
+
 
 function Verify-Elevated {
     # Get the ID and security principal of the current user account
