@@ -85,4 +85,6 @@ Pop-Location
 
 
 #start Powershell directly in $defaultSessionPath folder
-Set-Location $defaultSessionPath
+if (Test-Path variable:defaultSessionPath ) {
+    Set-Location $defaultSessionPath
+}
