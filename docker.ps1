@@ -12,7 +12,13 @@ function Start-ContainerBash {
     
     docker exec -it $containerName /bin/bash
 }
-
+function Start-ContainerShell {
+    param (
+		[string] $containerName
+    )
+    
+    docker exec -it $containerName /bin/sh
+}
 function Remove-StoppedContainers {
 	docker container rm $(docker container ls -q)
 }
@@ -37,7 +43,8 @@ function Add-ContainerIpToHosts {
 
 Set-Alias ds  Start-Containers
 Set-Alias dd  Stop-Containers # dd = docker down
-Set-Alias dsb  Start-ContainerBash 
+Set-Alias dsb  Start-ContainerBash
+Set-Alias dss  Start-ContainerShell 
 Set-Alias drm  Remove-StoppedContainers
 Set-Alias drmf  Remove-AllContainers
 Set-Alias dip  Get-ContainerIPAddress
