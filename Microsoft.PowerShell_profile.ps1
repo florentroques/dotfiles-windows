@@ -4,6 +4,16 @@
 $profileDir = $PSScriptRoot;
 $defaultSessionPath = "$HOME/Documents/Github"
 
+#For updating dotfiles
+$account = "florentroques"
+$repo    = "dotfiles-windows"
+$branch  = "master"
+
+function Update-DotFiles {
+	iex ((new-object net.webclient).DownloadString("https://raw.github.com/$account/$repo/$branch/setup/install.ps1"))
+}
+Set-Alias updatedf Update-DotFiles
+
 # Edit whole dir, so we can edit included files etc
 function edit-powershell-profile {
 	edit $profileDir
