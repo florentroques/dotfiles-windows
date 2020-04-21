@@ -53,6 +53,11 @@ or
 clist -l
 ```
 
+---
+
+### How to start a powershell script at startup
+see https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/#text-post
+
 ### See also
 - To customize Powershell  
 https://github.com/pecigonzalo/Oh-My-Posh  
