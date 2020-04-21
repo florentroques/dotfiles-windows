@@ -45,8 +45,12 @@ function Set-UnpinTaskbarApp {
       [Parameter(Mandatory=$true)][string]$appNameOrPath
   )
 
+  if ([string]::IsNullOrWhiteSpace($appNameOrPath)) {return}
+
   if (!(Test-Path "$appNameOrPath")) {
     $appNameOrPath = Get-TaskbarShortcutPath($appNameOrPath)
+
+    if ([string]::IsNullOrWhiteSpace($appNameOrPath)) {return}
 
     if (!(Test-Path "$appNameOrPath")) {
       Write-Host "Cound not find a shortcut for $appNameOrPath"
