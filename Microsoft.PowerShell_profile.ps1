@@ -85,10 +85,16 @@ $subscripts = @(
  "aliases",
  "docker",
  "defaults",
- "unix"
+ "unix",
+ "taskbar"
 )
 $subscripts | Where-Object {Test-Path "$_.ps1"} | ForEach-Object -process {Invoke-Expression ". .\$_.ps1"}
 Pop-Location
+
+if ($env:USERDNSDOMAIN -eq "EU.CULLIGAN.ORG") {
+    Set-UnpinTaskbarApp vlc
+    Set-UnpinTaskbarApp ie
+}
 
 
 #start Powershell directly in $defaultSessionPath folder
