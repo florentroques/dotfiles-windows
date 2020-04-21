@@ -18,6 +18,17 @@ ${function:dl} = { Set-Location ~\Downloads }
 #start vscode typing c
 Set-Alias -Name c -Value code
 
+# curl: Use `curl.exe` if available | needs curl installed via chocolatey before
+if (Get-Command curl.exe -ErrorAction SilentlyContinue | Test-Path) {
+    rm alias:curl -ErrorAction SilentlyContinue
+    ${function:curl} = { curl.exe @args }
+    # Gzip-enabled `curl`
+    ${function:gurl} = { curl --compressed @args }
+} else {
+    # Gzip-enabled `curl`
+    ${function:gurl} = { curl -TransferEncoding GZip }
+}
+
 function Get-PowershellVersion {
  Get-Host | Select-Object Version
 }
