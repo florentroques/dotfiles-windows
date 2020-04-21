@@ -14,11 +14,6 @@ function Update-DotFiles {
 }
 Set-Alias updatedf Update-DotFiles
 
-# Edit whole dir, so we can edit included files etc
-function edit-powershell-profile {
-	edit $profileDir
-}
-
 # Kinda like $EDITOR in nix
 # TODO: check out edit-file from PSCX
 # You may prefer eg 'subl' or 'code' or whatever else
@@ -75,14 +70,14 @@ function Invoke-PowershellProfiles {
 #pr = powershell reload
 Set-Alias pr Invoke-PowershellProfiles #Run as . pr otherwise doesn't reload profile(s)
 
-
-function Edit-Profile {
-    #launch current user powershell profile file in vscode for editing 
-    code $PROFILE
+# Edit whole dir, so we can edit included files etc
+function Edit-PowershellProfile {
+	edit $profileDir
 }
-#aliases
+
 #pe = powershell edit
-Set-Alias pe Edit-profile
+Set-Alias pe Edit-PowershellProfile
+
 
 #Import all subscripts in Powershell profile
 Push-Location (Split-Path -parent $profile)
