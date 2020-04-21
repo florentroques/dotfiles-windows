@@ -55,6 +55,7 @@ function Set-UnpinTaskbarApp {
   
   . "$PSScriptRoot\PinToTaskBar1903.ps1" $appNameOrPath "UNPIN"
 }
+Set-Alias unpintba Set-UnpinTaskbarApp
 
 function Set-PinTaskbarApp {
   param(
@@ -74,3 +75,4 @@ function Set-PinTaskbarApp {
 
   . "$PSScriptRoot\PinToTaskBar1903.ps1" $appPath "PIN"
 }
+Set-Alias pintba Set-PinTaskbarApp
