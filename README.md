@@ -38,10 +38,6 @@ https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-
 
 To list locally installed chocolatey packages
 ```powershell
-choco list --local-only
-```
-or
-```powershell
 clist -l
 ```
 
