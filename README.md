@@ -28,14 +28,6 @@ iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentro
 iex ((new-object net.webclient).DownloadString('https://raw.github.com/florentroques/dotfiles-windows/master/user-apps.ps1'))
 ```
 
-
-
-### Inspired from:    
-https://github.com/jayharris/dotfiles-windows  
-https://github.com/mikemaccana/powershell-profile
-
-
-
 > **Note:** To create Powershell functions, it is recommended to follow the
 "Approved Verbs for PowerShell Commands" naming scheme.  
 See:
@@ -55,6 +47,10 @@ clist -l
 
 ---
 
+### Inspired from:    
+https://github.com/jayharris/dotfiles-windows  
+https://github.com/mikemaccana/powershell-profile
+
 ### How to start a powershell script at startup
 see https://blog.netwrix.com/2018/07/03/how-to-automate-powershell-scripts-with-task-scheduler/#text-post
 
@@ -67,6 +63,3 @@ Note: had tried https://github.com/pecigonzalo/Oh-My-Posh which seemed to run be
 - Carbon, Powerful Powershell module:  
 http://get-carbon.org/  
 https://github.com/webmd-health-services/Carbon/
-
-
-
