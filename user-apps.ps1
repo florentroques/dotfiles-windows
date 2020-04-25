@@ -16,6 +16,9 @@ if (!(Verify-Elevated)) {
    exit
 }
 
+function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
+
+
 # Reload the $env object from the registry
 function Refresh-Environment {
     $locations = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment',
