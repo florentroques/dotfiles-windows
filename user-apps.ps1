@@ -35,7 +35,9 @@ choco upgrade libreoffice-fresh -y
 choco upgrade lastpass -y
 choco upgrade lastpass-chrome -y
 choco upgrade skype -y
-choco upgrade paint.net -y
-choco upgrade spotify -y
-choco upgrade gimp -y
-choco upgrade whatsapp -y
+#choco upgrade paint.net -y
+#choco upgrade spotify -y
+#choco upgrade gimp -y
+#choco upgrade whatsapp -y
+choco upgrade ublockorigin-chrome -y
+choco upgrade ublockorigin-firefox -y
