@@ -10,7 +10,7 @@ $repo    = "dotfiles-windows"
 $branch  = "master"
 
 function Update-DotFiles {
-	iex ((new-object net.webclient).DownloadString("https://raw.github.com/$account/$repo/$branch/setup/install.ps1"))
+	Invoke-Expression ((new-object net.webclient).DownloadString("https://raw.github.com/$account/$repo/$branch/setup/install.ps1"))
 }
 Set-Alias updatedf Update-DotFiles
 
