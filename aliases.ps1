@@ -33,3 +33,6 @@ function Get-PowershellVersion {
  Get-Host | Select-Object Version
 }
 Set-Alias psversion Get-PowershellVersion
+
+# Get definition of function and echo the code
+function def ($funcname) { (Get-Command $funcname).Definition }
