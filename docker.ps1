@@ -40,12 +40,16 @@ function Add-ContainerIpToHosts {
 	$path = 'C:\Windows\System32\drivers\etc\hosts'
 	$newEntry + (Get-Content $path -Raw) | Set-Content $path
 }
+function Write-DockerProcesses {
+	docker ps
+}
 
-Set-Alias ds  Start-Containers
-Set-Alias dd  Stop-Containers # dd = docker down
-Set-Alias dsb  Start-ContainerBash
-Set-Alias dss  Start-ContainerShell 
-Set-Alias drm  Remove-StoppedContainers
+Set-Alias ds    Start-Containers
+Set-Alias dd    Stop-Containers # dd = docker down
+Set-Alias dsb   Start-ContainerBash
+Set-Alias dss   Start-ContainerShell 
+Set-Alias drm   Remove-StoppedContainers
 Set-Alias drmf  Remove-AllContainers
-Set-Alias dip  Get-ContainerIPAddress
-Set-Alias d2h  Add-ContainerIpToHosts
+Set-Alias dip   Get-ContainerIPAddress
+Set-Alias d2h   Add-ContainerIpToHosts
+Set-Alias dps	Write-DockerProcesses
