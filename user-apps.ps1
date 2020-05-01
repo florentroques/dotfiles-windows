@@ -16,6 +16,10 @@ if (!(Verify-Elevated)) {
    exit
 }
 
+#Note: You must have your execution policy set to unrestricted (or at least in bypass) for this to work.
+#To set this, run Set-ExecutionPolicy Unrestricted from a PowerShell running as Administrator.
+Set-ExecutionPolicy Unrestricted
+
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
 
 
