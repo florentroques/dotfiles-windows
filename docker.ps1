@@ -44,6 +44,24 @@ function Write-DockerProcesses {
 	docker ps
 }
 
+function Stop-DockerDesktop {
+	$processes = Get-Process "*docker desktop*"
+	if ($processes.Count -gt 0)
+	{
+			$processes[0].Kill()
+			$processes[0].WaitForExit()
+	}
+}
+
+function Start-DockerDesktop {
+	Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+}
+function Restart-DockerDesktop {
+	Stop-DockerDesktop
+	Start-DockerDesktop
+}
+
+
 Set-Alias ds    Start-Containers
 Set-Alias dd    Stop-Containers # dd = docker down
 Set-Alias dsb   Start-ContainerBash
@@ -52,4 +70,7 @@ Set-Alias drm   Remove-StoppedContainers
 Set-Alias drmf  Remove-AllContainers
 Set-Alias dip   Get-ContainerIPAddress
 Set-Alias d2h   Add-ContainerIpToHosts
-Set-Alias dps	Write-DockerProcesses
+Set-Alias dps		Write-DockerProcesses
+Set-Alias doff Stop-DockerDesktop
+Set-Alias don Start-DockerDesktop
+Set-Alias drestart Restart-DockerDesktop
