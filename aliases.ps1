@@ -36,3 +36,9 @@ Set-Alias psversion Get-PowershellVersion
 
 # Get definition of function and echo the code
 function def ($funcname) { (Get-Command $funcname).Definition }
+
+function hibernate { rundll32.exe powrprof.dll,SetSuspendState }
+
+function pserve {
+    python -c "from http.server import test, SimpleHTTPRequestHandler as RH; RH.extensions_map={k:v+';charset=UTF-8' for k,v in RH.extensions_map.items()}; test(RH)"
+}
