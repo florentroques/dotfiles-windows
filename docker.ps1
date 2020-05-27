@@ -63,20 +63,20 @@ function Restart-DockerDesktop {
 }
 
 function Uninstall-AllDockerObjects {
-	# Stop all containers
-	docker stop `docker ps -qa`
+	Write-Output "Stopping all containers..."
+	docker stop $(docker ps -qa)
 
-	# Remove all containers
-	docker rm `docker ps -qa`
+	Write-Output "Removing all containers"
+	docker rm $(docker ps -qa)
 
-	# Remove all images
-	docker rmi -f `docker images -qa `
+	Write-Output "Removing all images"
+	docker rmi -f $(docker images -qa)
 
-	# Remove all volumes
+	Write-Output "Removing all volumes"
 	docker volume rm $(docker volume ls -q)
 
-	# Remove all networks
-	docker network rm `docker network ls -q`
+	Write-Output "Removing all networks"
+	docker network rm $(docker network ls -q)
 }
 
 
