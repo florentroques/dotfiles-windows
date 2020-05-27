@@ -42,8 +42,8 @@ function Refresh-Environment {
 
 ### Chocolatey
 Write-Host "Installing Desktop Utilities..." -ForegroundColor "Yellow"
-if ((which cinst) -eq $null) {
-    iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
+if ($null -eq (which cinst)) {
+    Invoke-Expression (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
     Refresh-Environment
     choco feature enable -n=allowGlobalConfirmation
 }
