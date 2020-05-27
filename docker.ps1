@@ -56,21 +56,41 @@ function Stop-DockerDesktop {
 function Start-DockerDesktop {
 	Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 }
+
 function Restart-DockerDesktop {
 	Stop-DockerDesktop
 	Start-DockerDesktop
 }
 
+function Uninstall-AllDockerObjects {
+	# Stop all containers
+	docker stop `docker ps -qa`
 
-Set-Alias ds    Start-Containers
-Set-Alias dd    Stop-Containers # dd = docker down
-Set-Alias dsb   Start-ContainerBash
-Set-Alias dss   Start-ContainerShell 
+	# Remove all containers
+	docker rm `docker ps -qa`
+
+	# Remove all images
+	docker rmi -f `docker images -qa `
+
+	# Remove all volumes
+	docker volume rm $(docker volume ls -q)
+
+	# Remove all networks
+	docker network rm `docker network ls -q`
+}
+
+
+
+Set-Alias dstart		Start-Containers
+Set-Alias dstop		Stop-Containers
+Set-Alias dbash   Start-ContainerBash
+Set-Alias dshell   Start-ContainerShell 
 Set-Alias drm   Remove-StoppedContainers
 Set-Alias drmf  Remove-AllContainers
 Set-Alias dip   Get-ContainerIPAddress
 Set-Alias d2h   Add-ContainerIpToHosts
 Set-Alias dps		Write-DockerProcesses
-Set-Alias doff Stop-DockerDesktop
-Set-Alias don Start-DockerDesktop
+Set-Alias doff  Stop-DockerDesktop
+Set-Alias don   Start-DockerDesktop
 Set-Alias drestart Restart-DockerDesktop
+Set-Alias dreset Uninstall-AllDockerObjects
